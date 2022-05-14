@@ -16,9 +16,17 @@
       console.log('Conectado al servidor')
     });
 
+    socket.on('mensaje', function(payload) {
+      console.log('Escuchando: ', payload)
+    })
+
     socket.on('disconnect', function() {
       console.log('Se nos fue el firulais')
     });
+
+    socket.emit('mensaje', {
+      nombre: 'Freddy'
+    })
   </script>
 </body>
 </html>

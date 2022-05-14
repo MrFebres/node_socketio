@@ -6,14 +6,10 @@ const app = express();
 
 // Node-socket Server.
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+module.exports.io = require('socket.io')(server);
+require('./sockets')
 
 // Socket messages.
-io.on('connection', client => {
-  console.log('Cliente conectado')
-
-  client.on('disconnect', () => console.log('cliente disconectado'));
-});
 
 const {PORT} = process.env
 
