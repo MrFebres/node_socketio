@@ -9,8 +9,6 @@ const server = require('http').createServer(app);
 module.exports.io = require('socket.io')(server);
 require('./sockets')
 
-// Socket messages.
-
 const {PORT} = process.env
 
 const publicPath = resolve(__dirname, 'public');
